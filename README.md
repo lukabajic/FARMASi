@@ -1,30 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# FARMASi #streberke
 
-## Getting Started
+This project was created by [me](https://www.lukabajic.dev).
 
-First, run the development server:
+## Description
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+A website for one team of a much larger MLM company.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Main purpose is to for users to apply for membership by submitting the form.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Tech
 
-## Learn More
+- Built with Next.js (React) on the Front-end
+- State menagement with Redux (including Thunk)
+- Forms with Redux Form
+- Using Strapi for as a Content Menagement System
 
-To learn more about Next.js, take a look at the following resources:
+## Version 2
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Eerlier this year I practiced Sass while building this website with some basic PhP, without CMS.
+Decided to have some fun, practice Next.js and integrate Strapi.
