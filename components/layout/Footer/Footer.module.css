@@ -1,0 +1,44 @@
+.wrapper {
+  padding: 5rem 0;
+}
+
+.hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(26, 23, 22, 0.1);
+  border-bottom: 1px solid rgba(252, 252, 252, 0.3);
+  margin-bottom: var(--spacing-large);
+}
+
+.primary {
+  text-align: center;
+  margin-bottom: var(--spacing-large);
+}
+
+.thin {
+  font-weight: 400;
+}
+
+.brand {
+  text-transform: none;
+  display: inline-block;
+}
+
+.logo {
+  margin: 0 auto;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--color-gray);
+  font-weight: 300;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* &__secondary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */

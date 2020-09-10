@@ -1,0 +1,36 @@
+.wrapper {
+  padding: 7rem 0;
+}
+
+@media only screen and (min-width: 62rem) {
+  .wrapper {
+    padding: 10rem 0;
+  }
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 62rem) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+  }
+}
+
+.img {
+  margin-bottom: var(--spacing);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 62rem) {
+  .img {
+    grid-column: 1 / span 8;
+    grid-row: 1 / 2;
+  }
+}

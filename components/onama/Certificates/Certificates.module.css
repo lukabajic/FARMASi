@@ -1,0 +1,89 @@
+.wrapper {
+  padding: 5rem 0;
+}
+
+.heading {
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 4.2rem;
+  color: var(--color-blue);
+  opacity: 0.825;
+  position: relative;
+  margin-bottom: var(--spacing-large);
+}
+
+@media only screen and (min-width: 48rem) {
+  .heading {
+    font-size: 5.6rem;
+  }
+}
+
+.heading::before,
+.heading::after {
+  color: var(--color-gray);
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media only screen and (min-width: 48rem) {
+  .heading::before,
+  .heading::after {
+    font-size: 3.2rem;
+  }
+}
+
+.heading::after {
+  content: "testirano";
+  left: calc(100% - 1.5rem);
+}
+.heading::before {
+  content: "provereno";
+  right: calc(100% - 1.5rem);
+  font-weight: 400;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: var(--spacing-large);
+}
+
+@media only screen and (min-width: 48rem) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 1.5rem;
+  }
+}
+
+.item {
+  width: calc(100% / 3);
+  padding: 1px;
+}
+
+@media only screen and (min-width: 48rem) {
+  .item {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 48rem) {
+  .container {
+    max-width: 60vw;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 48rem) {
+  .img {
+    margin: 0 auto;
+  }
+}

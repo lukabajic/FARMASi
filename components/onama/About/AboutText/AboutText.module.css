@@ -1,0 +1,58 @@
+.wrapper {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(229, 0, 131, 0.95),
+    rgba(255, 25, 115, 0.95)
+  );
+  padding: var(--spacing);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+
+  color: var(--color-white);
+  line-height: 1.15;
+}
+
+@media only screen and (min-width: 48rem) {
+  .wrapper {
+    padding: var(--spacing-large);
+  }
+}
+@media only screen and (min-width: 62rem) {
+  .wrapper {
+    margin-bottom: 0;
+    grid-column: 7 / span 6;
+    grid-row: 1 / 2;
+  }
+}
+
+.heading {
+  font-size: 3.6rem;
+  margin-bottom: var(--spacing-large);
+}
+
+.heading span {
+  font-weight: 400;
+}
+
+.item:not(:last-child) {
+  margin-bottom: var(--spacing);
+}
+
+.item strong {
+  text-transform: uppercase;
+}
+
+.item span {
+  color: var(--color-light);
+}
+
+.item::before {
+  content: "";
+  display: inline-block;
+  height: 1.4rem;
+  width: 1.4rem;
+
+  background-color: var(--color-white);
+  mask-image: url("/chevron-forward-outline.svg");
+  mask-size: cover;
+}

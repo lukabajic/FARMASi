@@ -1,0 +1,24 @@
+.showcase {
+  padding: 5rem 0;
+}
+
+.showcase__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.logotip {
+  padding: 5rem 0;
+}
+
+.logotip__img {
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 48rem) {
+  .showcase__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 3rem;
+  }
+}
