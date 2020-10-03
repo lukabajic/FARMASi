@@ -72,7 +72,7 @@ const Program = ({ data, imageUrl }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(
     "https://cdn.contentful.com/spaces/xmr7ioriechc/environments/master/entries/2eDlBPae3WpxL3d28Luy0G?access_token=_68lPZExyj4BhsOGwlXpa00EYe_tRDnCFHCDcDiUZx0"
   );
