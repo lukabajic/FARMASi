@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 
 import Layout from "../components/layout/Layout/Layout";
@@ -12,6 +12,20 @@ import TeamGallery from "../components/onama/TeamGallery/TeamGallery";
 const Onama = () => {
   const [modal, setModal] = useState(false);
 
+  const [gallery, setGallery] = useState(null);
+
+  useEffect(() => {
+    if (!gallery) {
+      (async () => {
+        const res = await fetch(
+          "https://cdn.contentful.com/spaces/xmr7ioriechc/environments/master/entries?access_token=_68lPZExyj4BhsOGwlXpa00EYe_tRDnCFHCDcDiUZx0&content_type=gallery"
+        );
+        const data = await res.json();
+        setGallery(data.includes.Asset);
+      })();
+    }
+  }, [gallery]);
+
   if (modal !== false) {
     return (
       <Layout>
@@ -21,6 +35,7 @@ const Onama = () => {
         <div style={{ height: "100vh", width: "100%" }}></div>
         <Modal
           index={modal}
+          gallery={gallery}
           changeImage={setModal}
           closeModal={() => setModal(false)}
         />
@@ -35,7 +50,7 @@ const Onama = () => {
       </Head>
       <Container>
         <About />
-        <TeamGallery clicked={setModal} />
+        <TeamGallery clicked={setModal} gallery={gallery} />
         <Additional />
         <Certificates />
       </Container>
