@@ -2,7 +2,7 @@
   "forms": {
     "contactForm": {
       "name": "Contact Form",
-      "actions": [{ "type": "email", "to": "me@lukabajic.dev" }]
+      "actions": [{ "type": "email", "to": "olga@farmasi-streberke.rs" }]
     }
   }
 }
