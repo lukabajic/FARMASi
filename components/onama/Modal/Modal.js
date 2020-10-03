@@ -1,8 +1,12 @@
 import styles from "./Modal.module.css";
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
 const Modal = ({ index, closeModal, changeImage, gallery }) => {
   const prev = index === 0 ? gallery.length - 1 : index - 1;
   const next = index === gallery.length - 1 ? 0 : index + 1;
+
+  console.log(gallery[index].url);
 
   return (
     <div className={styles.backdrop} onClick={closeModal}>
@@ -11,8 +15,8 @@ const Modal = ({ index, closeModal, changeImage, gallery }) => {
       </div>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <img
-          src={gallery[index].imgSrc}
-          alt={gallery[index].imgAlt}
+          src={baseUrl + gallery[index].url}
+          alt={gallery[index].name}
           className={styles.img}
         />
       </div>

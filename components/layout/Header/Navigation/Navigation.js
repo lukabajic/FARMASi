@@ -10,6 +10,11 @@ const Navigation = ({ isNavOpen }) => {
       icon: "home-outline",
     },
     {
+      title: "O nama",
+      link: "/onama",
+      icon: "information-outline",
+    },
+    {
       title: "Ponuda",
       link: "/ponuda",
       icon: "grid-outline",
@@ -43,7 +48,12 @@ const Navigation = ({ isNavOpen }) => {
 
   return (
     <nav className={wrapperStyles.join(" ")}>
-      <ul className={styles.nav}>{renderedLinks}</ul>
+      <ul
+        className={styles.nav}
+        style={{ gridTemplateColumns: `repeat(${PAGES.length}, max-content)` }}
+      >
+        {renderedLinks}
+      </ul>
     </nav>
   );
 };

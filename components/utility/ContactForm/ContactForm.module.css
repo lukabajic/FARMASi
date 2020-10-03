@@ -92,6 +92,12 @@
   text-align: center;
 }
 
+@media only screen and (min-width: 48rem) {
+  .thanks {
+    padding: var(--spacing-large);
+  }
+}
+
 .thanks h1 {
   font-size: 3.2rem;
   margin-bottom: var(--spacing-large);

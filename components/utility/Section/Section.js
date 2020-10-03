@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "../Button/Button";
 
 import styles from "./Section.module.css";
@@ -5,63 +6,54 @@ import styles from "./Section.module.css";
 const Section = (props) => {
   const {
     buttonText,
-    text,
+    buttonLink,
+    paragraph,
     header,
-    imgSrc,
+    imageUrl,
     imgAlt,
     reverse,
-    noImgSpacing,
-    href,
-    blank = false,
+    noImageSpacing,
+    newWindow,
   } = props;
 
   const figureStyles = [styles.figure];
   const wrapperStyles = [styles.wrapper];
   reverse && wrapperStyles.push(styles.reverse);
-  noImgSpacing && figureStyles.push(styles.no__spacing);
+  noImageSpacing && figureStyles.push(styles.no__spacing);
 
-  // const figure = () => (
-  //   <figure className={figureStyles.join(" ")}>
-  //     <img src={imgSrc} alt={imgAlt} className={styles.img} />
-  //   </figure>
-  // );
-  // const content = () => (
-  //   <div className={styles.content}>
-  //     {header && <h2 className={styles.header}>{header}</h2>}
-  //     {text && <p className={styles.text}>{text}</p>}
-  //     {buttonText && (
-  //       <Button blue growShadow href={href} blank={blank}>
-  //         {buttonText}
-  //       </Button>
-  //     )}
-  //   </div>
-  // );
+  const [link, setLink] = useState(buttonLink);
 
-  // let render = (
-  //   <>
-  //     {figure()}
-  //     {content()}
-  //   </>
-  // );
-  // if (reverse) {
-  //   render = (
-  //     <>
-  //       {content()}
-  //       {figure()}
-  //     </>
-  //   );
-  // }
+  if (buttonLink.toLowerCase().includes("pdf")) {
+    const pdfID = buttonLink.split(" ")[1];
+    (async () => {
+      const res = await fetch(
+        `https://cdn.contentful.com/spaces/xmr7ioriechc/environments/master/assets/${pdfID}?access_token=_68lPZExyj4BhsOGwlXpa00EYe_tRDnCFHCDcDiUZx0`
+      );
+      const data = await res.json();
+      setLink(data.fields.file.url);
+    })();
+  }
 
   return (
     <section className={wrapperStyles.join(" ")}>
       <figure className={figureStyles.join(" ")}>
-        <img src={imgSrc} alt={imgAlt} className={styles.img} />
+        <img src={"https:" + imageUrl} alt={imgAlt} className={styles.img} />
       </figure>
       <div className={styles.content}>
-        {header && <h2 className={styles.header}>{header}</h2>}
-        {text && <p className={styles.text}>{text}</p>}
+        {header && (
+          <h2
+            dangerouslySetInnerHTML={{ __html: header }}
+            className={styles.header}
+          />
+        )}
+        {paragraph && (
+          <p
+            dangerouslySetInnerHTML={{ __html: paragraph }}
+            className={styles.text}
+          />
+        )}
         {buttonText && (
-          <Button blue growShadow href={href} blank={blank}>
+          <Button blue growShadow href={link} blank={newWindow}>
             {buttonText}
           </Button>
         )}

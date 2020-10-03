@@ -68,19 +68,27 @@
   font-weight: 600;
 }
 
-.blue {
-  color: var(--color-blue);
-}
-
-.thin {
-  font-weight: 300;
-}
-
 .heading__large {
   margin-bottom: var(--spacing);
   color: var(--color-dark);
   font-size: 4rem;
   font-weight: 600;
+}
+
+.heading__large s {
+  font-weight: 600;
+  color: var(--color-dark);
+  text-decoration: none;
+}
+
+.heading__large b {
+  color: var(--color-blue);
+}
+
+.heading__large i {
+  font-weight: 400;
+  color: var(--color-dark);
+  font-style: normal;
 }
 
 .paragraph {
